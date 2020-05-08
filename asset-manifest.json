@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/cyberchat/static/css/main.d8126f3e.chunk.css",
-    "main.js": "/cyberchat/static/js/main.17747cb3.chunk.js",
-    "main.js.map": "/cyberchat/static/js/main.17747cb3.chunk.js.map",
+    "main.css": "/cyberchat/static/css/main.a80c32f4.chunk.css",
+    "main.js": "/cyberchat/static/js/main.9073fd93.chunk.js",
+    "main.js.map": "/cyberchat/static/js/main.9073fd93.chunk.js.map",
     "runtime-main.js": "/cyberchat/static/js/runtime-main.58f79dd0.js",
     "runtime-main.js.map": "/cyberchat/static/js/runtime-main.58f79dd0.js.map",
     "static/js/2.fba4cf20.chunk.js": "/cyberchat/static/js/2.fba4cf20.chunk.js",
     "static/js/2.fba4cf20.chunk.js.map": "/cyberchat/static/js/2.fba4cf20.chunk.js.map",
     "index.html": "/cyberchat/index.html",
-    "precache-manifest.c7278267746e5683bfc63ecb7b8d6cc5.js": "/cyberchat/precache-manifest.c7278267746e5683bfc63ecb7b8d6cc5.js",
+    "precache-manifest.f8ab1e4e84aa63aaac229b5bee1ddbc3.js": "/cyberchat/precache-manifest.f8ab1e4e84aa63aaac229b5bee1ddbc3.js",
     "service-worker.js": "/cyberchat/service-worker.js",
-    "static/css/main.d8126f3e.chunk.css.map": "/cyberchat/static/css/main.d8126f3e.chunk.css.map",
+    "static/css/main.a80c32f4.chunk.css.map": "/cyberchat/static/css/main.a80c32f4.chunk.css.map",
     "static/js/2.fba4cf20.chunk.js.LICENSE.txt": "/cyberchat/static/js/2.fba4cf20.chunk.js.LICENSE.txt",
     "static/media/panorama.png": "/cyberchat/static/media/panorama.fee7f301.png"
   },
   "entrypoints": [
     "static/js/runtime-main.58f79dd0.js",
     "static/js/2.fba4cf20.chunk.js",
-    "static/css/main.d8126f3e.chunk.css",
-    "static/js/main.17747cb3.chunk.js"
+    "static/css/main.a80c32f4.chunk.css",
+    "static/js/main.9073fd93.chunk.js"
   ]
 }
