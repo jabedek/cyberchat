@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cyberchat/precache-manifest.0655b6e992cd7c2cf9c806646c8cd9c8.js"
+  "/cyberchat/precache-manifest.9ead674a130fdcdd9bded3b6cfb968c3.js"
 );
 
 self.addEventListener('message', (event) => {
