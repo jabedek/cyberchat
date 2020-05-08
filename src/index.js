@@ -4,10 +4,8 @@ import App from "./App";
 import { BrowserRouter, HashRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <HashRouter>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </HashRouter>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById("root")
 );
