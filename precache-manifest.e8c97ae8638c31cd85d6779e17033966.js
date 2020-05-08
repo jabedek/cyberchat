@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "85a56190d14c13cef7d5040ace8683ce",
+    "revision": "8df200a8752bebf4b29fcb3a5b5c7521",
     "url": "/cyberchat/index.html"
   },
   {
-    "revision": "14b813297178566146f3",
-    "url": "/cyberchat/static/css/main.ab11b965.chunk.css"
+    "revision": "cde71610a0284815f512",
+    "url": "/cyberchat/static/css/main.2373c583.chunk.css"
   },
   {
-    "revision": "07bd57ef5c61b7857b64",
-    "url": "/cyberchat/static/js/2.bdb7dfe4.chunk.js"
+    "revision": "c5959d3e77f06e8a5379",
+    "url": "/cyberchat/static/js/2.fba4cf20.chunk.js"
   },
   {
     "revision": "b67bc97fd0dd67004287af4028afc1b1",
-    "url": "/cyberchat/static/js/2.bdb7dfe4.chunk.js.LICENSE.txt"
+    "url": "/cyberchat/static/js/2.fba4cf20.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "14b813297178566146f3",
-    "url": "/cyberchat/static/js/main.1bf7d6b9.chunk.js"
+    "revision": "cde71610a0284815f512",
+    "url": "/cyberchat/static/js/main.f93d276e.chunk.js"
   },
   {
     "revision": "d4b7703ffad9f8328069",
