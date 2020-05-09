@@ -25,6 +25,9 @@
   &__list {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
     padding-left: 1.2rem;
     color: #99a;
@@ -32,11 +35,16 @@
 
   &__item {
     margin: 1rem 0;
-    text-shadow: 0.5rem 0.5rem 0.75rem rgba(0, 0, 0, 0.8);
+    text-shadow: 0.15rem 0.15rem 0.15rem rgba(0, 0, 0, 1);
   }
 
   &__value {
     margin-top: 0.4rem;
     color: rgb(200, 200, 100);
+  }
+
+  &__users-list {
+    display: flex;
+    flex-direction: column;
   }
 }

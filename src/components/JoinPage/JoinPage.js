@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../Button/Button";
 import moment from "moment";
 import { socket } from "../../service/socket";
+import { generateUsername } from "../../utils";
 
 export default class JoinPage extends React.Component {
   constructor(props) {
@@ -49,30 +50,26 @@ export default class JoinPage extends React.Component {
           border: "0.14rem solid rgba(255, 255, 0, 0.6)",
         },
       });
-      this.generateUsername();
+
+      this.setState({ username: generateUsername() });
     }, 800);
   }
-
-  generateUsername = () => {
-    const prefixes = ["unique", "rare", "exceptional"];
-    const suffixes = ["entity", "individual", "subject", "one"];
-    const suf = suffixes[Math.floor(Math.random() * (suffixes.length - 0)) + 0];
-    const pre = prefixes[Math.floor(Math.random() * (prefixes.length - 0)) + 0];
-    const name = pre + "-" + suf;
-
-    this.setState({ username: name });
-  };
 
   handleClick = (name) => {
     this.setState({ username: name });
   };
 
   registerUsername = () => {
-    socket.emit("USER_JOIN", {
-      username: this.state.username,
-      room: "Main",
-      time: moment().format("h:mm:ss"),
-    });
+    let username = this.state.username.toLowerCase();
+    console.log((">>>", username));
+
+    if (username !== "cyberchat") {
+      socket.emit("USER_JOIN", {
+        username: this.state.username,
+        room: "Main",
+        time: moment().format("h:mm:ss"),
+      });
+    }
   };
 
   render() {

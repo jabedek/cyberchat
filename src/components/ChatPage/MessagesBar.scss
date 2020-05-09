@@ -72,10 +72,16 @@
 
   &__username {
     color: rgba(255, 235, 255, 0.5);
+    font-weight: 700;
   }
 
   &__time {
     margin-left: 1.5rem;
+  }
+
+  section {
+    display: flex;
+    justify-content: space-between;
   }
 }
 

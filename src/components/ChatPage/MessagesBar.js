@@ -30,10 +30,11 @@ export const MessagesBar = (props) => {
   const renderMessages = () => {
     const messagesList = messages.map((message, index) => (
       <li key={index} className="message">
-        <p className="message__username">
-          {message.username}
-          <span className="message__time"> {message.time}</span>
-        </p>
+        <section>
+          <p className="message__username">{message.username} </p>
+          <p className="message__time"> {message.time}</p>
+        </section>
+
         <p className="message__text"> {message.text}</p>
       </li>
     ));

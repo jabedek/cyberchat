@@ -17,10 +17,10 @@ export const SideBar = (props) => {
       const listUsers = users.map((user, index) => (
         <li key={index}>{user.username}</li>
       ));
-      return <ul className="sidebar__value">{listUsers}</ul>;
+      return <ul className="sidebar__users-list">{listUsers}</ul>;
     }
 
-    return <p className="sidebar__value">{users.length}</p>;
+    return <p className="sidebar__users-list">{users.length}</p>;
   };
 
   return (
