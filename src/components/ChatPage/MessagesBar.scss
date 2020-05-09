@@ -60,7 +60,6 @@
   font-size: 0.9rem;
   text-shadow: 0.15rem 0.15rem 0.15rem rgba(0, 0, 0, 1);
   border-bottom: 0.125rem solid rgba(0, 0, 0, 0.15);
-  // margin-top: 0.75rem;
   background: rgb(45, 45, 68);
 
   &__text {
@@ -71,7 +70,6 @@
   }
 
   &__username {
-    color: rgba(255, 235, 255, 0.5);
     color: rgba(5, 150, 250, 0.85);
     font-weight: 700;
   }

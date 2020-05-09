@@ -1,0 +1,4 @@
+Monoton - Logo, send button
+Open Sans - info, headers, etc.
+Raleway - text messages
+Jost - circular buttons

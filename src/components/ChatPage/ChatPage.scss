@@ -3,14 +3,10 @@
   width: 100vw;
   height: 100vh;
   background: transparent;
-  font: 400 2.7rem Montserrat;
   position: absolute;
   z-index: 2;
   overflow: hidden;
-  //   justify-content: center;
-  //   align-content: center;
   justify-items: center;
-
   grid-template-areas:
     "header  header  header header"
     ".       .       .       ."
@@ -20,7 +16,6 @@
     ".       .       .       ."
     ".       .       .       .";
 
-  //   overflow: hidden;
   background: rgba(15, 15, 40, 1);
 }
 
@@ -103,20 +98,17 @@
 .panorama__image--chat {
   opacity: 0.8;
   filter: blur(1.75px);
-  //   display: none;
 }
 
 .chat__board {
   color: #fff;
 
   position: absolute;
-  width: 94%;
+  width: 96%;
   height: 96%;
 
   border: 0.1rem solid #27273e;
-  //   border: 0.1rem solid #3f3e53;
 
-  font: 400 1.4rem "Open Sans", sans-serif;
   background: #27273e;
   background: rgba(39, 39, 62, 0.9);
 

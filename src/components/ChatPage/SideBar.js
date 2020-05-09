@@ -19,35 +19,28 @@ export const SideBar = (props) => {
       const listUsers = users.map((user, index) => {
         if (user.id !== id) return <li key={index}>{user.username}</li>;
       });
-      return <ul className="sidebar__users">{listUsers}</ul>;
+      return <ul className="users-info__list">{listUsers}</ul>;
     }
 
-    return <p className="sidebar__users">{users.length}</p>;
+    return <p className="users-info__list">{users.length}</p>;
   };
 
   return (
     <div className="sidebar">
       <label className="sidebar__header">Status</label>
 
-      <ul className="sidebar__list">
-        <li className="sidebar__item">
-          <i className="cube icon"></i>
-          Room:
-          <p className="sidebar__value">{room}</p>
-        </li>
-
-        <li className="sidebar__item">
-          <i className=" eye icon"></i>
+      <section className="user-info">
+        <div className="user-info__wrapper">
+          <i className="icon eye"></i>
           You:
-          <p className="sidebar__value">{username}</p>
-        </li>
+          <p className="user-info__name">{username}</p>
+        </div>
+      </section>
 
-        <li className="sidebar__item">
-          <i className=" users icon"></i>
-          Other users:
-          {renderUsers()}
-        </li>
-      </ul>
+      <section className="users-info">
+        <i className="icon cube"></i> Other users:
+        {renderUsers()}
+      </section>
     </div>
   );
 };
