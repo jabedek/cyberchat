@@ -25,9 +25,8 @@
   &__list {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
 
     padding-left: 1.2rem;
     color: #99a;
@@ -43,8 +42,15 @@
     color: rgb(200, 200, 100);
   }
 
-  &__users-list {
+  &__users {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 35vh;
+    margin-top: 0.4rem;
+    font-size: 1.02rem;
+    line-height: 1.5rem;
+    // max-height: 14vh;
   }
 }
