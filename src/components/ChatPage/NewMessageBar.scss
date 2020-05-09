@@ -119,27 +119,3 @@
 
   visibility: hidden;
 }
-
-@media (max-width: 960px) {
-  .new-message-bar {
-    width: 34%;
-
-    background: rgba(39, 39, 62, 0.9);
-    &__header {
-      height: 9%;
-      font-size: 1.1rem;
-    }
-  }
-
-  .new-message-bar-user-info {
-    visibility: visible;
-  }
-}
-
-@media (max-width: 660px) {
-  .new-message-bar {
-    width: 51%;
-    height: 20%;
-    order: 3;
-  }
-}
