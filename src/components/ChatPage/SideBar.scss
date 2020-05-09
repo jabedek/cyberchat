@@ -10,6 +10,8 @@
 
   border-right: 0.1rem solid rgba(63, 63, 86, 0.6);
 
+  background: transparent;
+
   &__header {
     height: 11%;
     width: 100%;
@@ -58,5 +60,38 @@
     font-size: 1.02rem;
     color: #99a;
     line-height: 1.5rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .sidebar {
+    background: rgba(39, 39, 62, 0.9);
+    width: 19%;
+
+    font-size: 1.02rem;
+    &__header {
+      display: none;
+    }
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .my-icon {
+    display: none;
+  }
+
+  .userElement {
+    padding: 0.2rem 0;
+  }
+
+  .users-info {
+    // text-align: center;
+    padding: 0.8rem;
+
+    &__list {
+      font-size: 0.9rem;
+    }
   }
 }

@@ -51,7 +51,7 @@ export const MessagesBar = (props) => {
         <li key={index} className="message">
           <section>
             <p className="message__username" style={{ color: specialStyling }}>
-              {message.username}{" "}
+              {message.username}
             </p>
             <p className="message__time"> {message.time}</p>
           </section>

@@ -15,11 +15,7 @@ export default class JoinPage extends React.Component {
       username: "",
       classAnimate: "animation-appear",
       btnVisibility: { display: "none" },
-      formVisibility: {
-        height: "0",
-        border: "none",
-        width: "0",
-      },
+      formVisibility: "invisible",
     };
   }
 
@@ -28,27 +24,19 @@ export default class JoinPage extends React.Component {
       username: "",
       classAnimate: "animation-appear",
       btnVisibility: { display: "none" },
-      formVisibility: {
-        height: "0",
-        border: "none",
-        width: "0",
-      },
+      formVisibility: "invisible",
     });
   }
 
   componentDidMount() {
-    socket.on("SERVER_WELCOME", (message) => {
-      console.log("SERVER_WELCOME:\n", message);
-    });
+    // socket.on("SERVER_WELCOME", (message) => {
+    //   console.log("SERVER_WELCOME:\n", message);
+    // });
 
     setTimeout(() => {
       this.setState({
         classAnimate: "",
-        formVisibility: {
-          height: "12vh",
-          width: "40vw",
-          border: "0.14rem solid rgba(255, 255, 0, 0.6)",
-        },
+        formVisibility: "visible",
       });
 
       this.setState({ username: generateUsername() });
@@ -94,9 +82,8 @@ export default class JoinPage extends React.Component {
           <Header />
 
           <form
-            className={`join-form ${this.state.classAnimate}`}
+            className={`join-form ${this.state.classAnimate} ${this.state.formVisibility}`}
             id="joinForm"
-            style={this.state.formVisibility}
             onFocus={() => {
               this.setState({
                 btnVisibility: { display: "flex" },

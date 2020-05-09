@@ -6,7 +6,7 @@
   position: absolute;
   z-index: 2;
   overflow: hidden;
-  justify-items: center;
+  // justify-items: center;
   grid-template-areas:
     "header  header  header header"
     ".       .       .       ."
@@ -103,13 +103,13 @@
 .chat__board {
   color: #fff;
 
+  justify-self: center;
   position: absolute;
   width: 96%;
   height: 96%;
 
   border: 0.1rem solid #27273e;
 
-  background: #27273e;
   background: rgba(39, 39, 62, 0.9);
 
   border-radius: 0.1rem;
@@ -118,4 +118,16 @@
   grid-column: 1 / 5;
 
   display: flex;
+}
+
+@media (max-width: 960px) {
+  .chat,
+  .chat__board {
+    background: transparent;
+    border-color: transparent;
+  }
+
+  .chat__board {
+    width: 98%;
+  }
 }

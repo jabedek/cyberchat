@@ -24,7 +24,11 @@ export class NewMessageBar extends React.Component {
   render() {
     return (
       <div className="new-message-bar">
-        <label className="new-message-bar__header"></label>
+        <label className="new-message-bar__header">
+          <section className="new-message-bar-user-info">
+            {this.state.username}
+          </section>
+        </label>
 
         <form className="message__form" id="message__form">
           <textarea

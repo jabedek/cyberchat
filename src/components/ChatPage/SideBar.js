@@ -17,7 +17,12 @@ export const SideBar = (props) => {
   const renderUsers = () => {
     if (users) {
       const listUsers = users.map((user, index) => {
-        if (user.id !== id) return <li key={index}>{user.username}</li>;
+        if (user.id !== id)
+          return (
+            <li className="userElement" key={index}>
+              {user.username}
+            </li>
+          );
       });
       return <ul className="users-info__list">{listUsers}</ul>;
     }
@@ -38,7 +43,10 @@ export const SideBar = (props) => {
       </section>
 
       <section className="users-info">
-        <i className="icon cube"></i> Other users:
+        <span className="my-icon">
+          <i className="icon cube"></i>{" "}
+        </span>{" "}
+        Other users:
         {renderUsers()}
       </section>
     </div>

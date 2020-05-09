@@ -91,3 +91,32 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 960px) {
+  .messages-bar {
+    background: transparent;
+    width: 47%;
+
+    &__header {
+      display: none;
+    }
+
+    &__list-wrapper {
+      background: transparent;
+      height: 100%;
+      padding: 0rem 0.7rem;
+    }
+
+    &__list {
+      border-radius: 0.1rem;
+    }
+  }
+
+  .message {
+    font-size: 0.85rem;
+
+    &__text {
+      font-size: 1.1rem;
+    }
+  }
+}
