@@ -1,11 +1,12 @@
 .new-message-bar {
   height: 100%;
-  width: 23%;
+  width: 26%;
   background: transparent;
 
   display: flex;
   font: 400 1.1rem "Open Sans", sans-serif;
   flex-direction: column;
+  border-radius: 0.1rem;
 
   &__header {
     // height: 11%;

@@ -98,6 +98,7 @@
 .panorama__image--chat {
   opacity: 0.8;
   filter: blur(1.75px);
+  user-select: none;
 }
 
 .chat__board {
