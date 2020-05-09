@@ -66,7 +66,7 @@ export const MessagesBar = (props) => {
 
   return (
     <div className="messages-bar">
-      <label className="messages-bar__header">Messages</label>
+      {/* <label className="messages-bar__header">Messages</label> */}
       <div className="messages-bar__list-wrapper">
         <ul
           className="messages-bar__list"

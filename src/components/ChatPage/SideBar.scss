@@ -38,8 +38,9 @@
   }
 
   &__name {
+    font-weight: 700;
     margin-top: 0.4rem;
-    color: rgba(5, 150, 250, 0.85);
+    color: rgba(5, 150, 250, 1);
   }
 }
 
@@ -93,5 +94,13 @@
     &__list {
       font-size: 0.9rem;
     }
+  }
+}
+@media (max-width: 660px) {
+  .sidebar {
+    order: 1;
+    // display: none;
+    width: 19%;
+    height: 100%;
   }
 }

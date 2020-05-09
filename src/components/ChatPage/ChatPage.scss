@@ -131,3 +131,12 @@
     width: 98%;
   }
 }
+
+@media (max-width: 660px) {
+  .chat__board {
+    flex-wrap: wrap;
+    // flex-direction: row;
+    height: 100%;
+    width: 100%;
+  }
+}
