@@ -5,6 +5,9 @@
 .animation-delayed-appear {
   animation: animation-delayed-appear 2s linear;
 }
+.animation-new-message {
+  animation: animation-new-message 0.5s linear;
+}
 .animation-vibrating {
   animation: animation-vibrating 4s linear infinite;
 }
@@ -22,6 +25,16 @@
 
 .animation-appear {
   animation: animation-appear 0.5s 0.3s ease;
+}
+
+@keyframes animation-new-message {
+  0% {
+    background: rgb(55, 55, 78);
+  }
+
+  100% {
+    background: rgb(45, 45, 68);
+  }
 }
 
 @keyframes animation-delayed-appear {

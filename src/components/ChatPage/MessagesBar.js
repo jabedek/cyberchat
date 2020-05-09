@@ -1,43 +1,34 @@
 import React, { useState, useEffect } from "react";
 import "./MessagesBar.scss";
-import { socket } from "../../service/socket";
-const messagesTest = [
-  { time: "17:05", text: "Hello world!", username: "xyz" },
-  { time: "13:45", text: "Równo", username: "Jeż" },
-];
+
 export const MessagesBar = (props) => {
   const [messages, setMessages] = useState([]);
+  const [messagesRef, setMessagesRef] = useState(null);
+
+  useEffect(() => {
+    if (messagesRef) {
+      messagesRef.scrollTop = messagesRef.scrollHeight;
+    }
+  });
+
   useEffect(() => {
     setMessages(props.messages);
-    // console.log(">>>MB", props.messages);
-
-    // socket.on("SERVER_MESSAGE", (message) => {
-    //   if (messages) {
-    //     let newMessages = [...messages, message];
-    //     console.log(">>>", newMessages);
-    //     setMessages(newMessages);
-
-    //     // console.log("");
-    //     // setMessages({ ...messages, message });
-    //   }
-    // });
   }, [props.messages]);
 
-  // socket.on("USER_MESSAGE", (message) => {
-  //   console.log("[@ChatPage] USER_MESSAGE:\n", message);
-  // });
-  // socket.on("SERVER_MESSAGE", (message) => {
-  //   console.log("[@ChatPage] SERVER_MESSAGE:\n", message);
-  // });
+  useEffect(() => {
+    if (messagesRef && messagesRef.children.length) {
+      const lastMessage = messagesRef.children[messagesRef.children.length - 1];
 
-  // socket.on("SERVER_REGISTER_MESSAGE", (message) => {
-  //   this.setState({ username: message.username, connected: true });
+      lastMessage.classList.toggle("animation-new-message");
 
-  //   console.log("[@ChatPage] SERVER_REGISTER_MESSAGE:\n", message);
-  // });
+      setTimeout(() => {
+        lastMessage.classList.toggle("animation-new-message");
+      }, 550);
+    }
+  }, [messages]);
 
   const renderMessages = () => {
-    const listMessages = messages.map((message, index) => (
+    const messagesList = messages.map((message, index) => (
       <li key={index} className="message">
         <p className="message__username">
           {message.username}
@@ -47,14 +38,21 @@ export const MessagesBar = (props) => {
       </li>
     ));
 
-    return <ul className="messages-bar__list">{listMessages}</ul>;
+    return messagesList;
   };
 
   return (
     <div className="messages-bar">
       <label className="messages-bar__header">Messages</label>
       <div className="messages-bar__list-wrapper">
-        {messages && renderMessages()}
+        <ul
+          className="messages-bar__list"
+          ref={(el) => {
+            setMessagesRef(el);
+          }}
+        >
+          {messages && renderMessages()}
+        </ul>
       </div>
     </div>
   );

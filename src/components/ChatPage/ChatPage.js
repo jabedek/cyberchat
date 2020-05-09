@@ -5,17 +5,12 @@ import { SideBar } from "./SideBar";
 import { MessagesBar } from "./MessagesBar";
 import { NewMessageBar } from "./NewMessageBar";
 import "./ChatPage.scss";
-import { Link } from "react-router-dom";
+import { Link, HashRouter } from "react-router-dom";
 import moment from "moment";
 import { Button } from "../Button/Button";
+import ifvisible from "ifvisible.js";
 
-// import io from "socket.io-client";
 import { socket } from "../../service/socket";
-
-const messagesTest = [
-  { time: "17:05", text: "Hello world!", username: "xyz" },
-  { time: "13:45", text: "Równo", username: "Jeż" },
-];
 
 export default class ChatPage extends React.Component {
   _isMounted = false;
@@ -29,15 +24,12 @@ export default class ChatPage extends React.Component {
   };
 
   componentDidMount() {
-    // socket.emit("chatMessage", {author: "", message: ""})
-
     this._isMounted = true;
 
     socket.on("SERVER_MESSAGE", (message) => {
       if (this._isMounted) {
         if (this.state.messages) {
           let newMessages = [...this.state.messages, message];
-          console.log(">>>", newMessages);
           this.setState({ messages: newMessages });
         } else {
           this.setState({ messages: [message] });
@@ -47,8 +39,6 @@ export default class ChatPage extends React.Component {
 
     // Get room and users
     socket.on("ROOM_USERS", ({ room, users }) => {
-      console.log("ROOM USERS", room, users);
-
       if (this._isMounted) {
         this.setState({ room, users });
       }
@@ -63,7 +53,6 @@ export default class ChatPage extends React.Component {
 
         if (this.state.messages) {
           let newMessages = [...this.state.messages, message.botMessage];
-          console.log(">>>", newMessages);
           this.setState({ messages: newMessages });
         } else {
           this.setState({
@@ -71,9 +60,16 @@ export default class ChatPage extends React.Component {
           });
         }
       }
-
-      console.log("got SERVER_REGISTER:\n", message);
     });
+
+    // if (this._isMounted) {
+    //   ifvisible.setIdleDuration(120);
+    //   ifvisible.on("idle", () => {
+    //     // socket.emit("disconnect");
+    //     socket.disconnect();
+    //     this.setState({ connected: false });
+    //   });
+    // }
   }
 
   componentWillUnmount() {
@@ -81,9 +77,6 @@ export default class ChatPage extends React.Component {
   }
 
   sendMessage = (msg) => {
-    // ev.preventDefault();
-    console.log("Sending to server...");
-
     socket.emit("USER_MESSAGE", {
       username: this.state.username,
       text: msg,
@@ -115,14 +108,14 @@ export default class ChatPage extends React.Component {
             <NewMessageBar username={this.state.username} />
           </div>
         ) : (
-          // <div className="button-wrapper" style={this.state.btnVisibility}>
-          <Link to="/">
-            <Button
-              text={"Back"}
-              classes={"home-button animation-delayed-appear"}
-            />
-          </Link>
-          // </div>
+          <HashRouter basename="/">
+            <Link to="/">
+              <Button
+                text={"Back"}
+                classes={"home-button animation-delayed-appear"}
+              />
+            </Link>
+          </HashRouter>
         )}
       </div>
     );

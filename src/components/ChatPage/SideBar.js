@@ -7,12 +7,10 @@ export const SideBar = (props) => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    console.log("[@SideBar]", props.username);
-
     setUsername(props.username);
     setRoom(props.room);
     setUsers(props.users);
-  }, [props.username, props.username, props.users]);
+  }, [props.username, props.room, props.users]);
 
   const renderUsers = () => {
     if (users) {

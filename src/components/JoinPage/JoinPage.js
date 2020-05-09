@@ -2,9 +2,9 @@ import React from "react";
 import { Header } from "../Header/Header";
 import "./JoinPage.scss";
 import panorama from "./panorama.png";
-import "./JoinForm.scss";
 import { Link } from "react-router-dom";
 import { Button } from "../Button/Button";
+import moment from "moment";
 import { socket } from "../../service/socket";
 
 export default class JoinPage extends React.Component {
@@ -58,6 +58,7 @@ export default class JoinPage extends React.Component {
     socket.emit("USER_JOIN", {
       username: this.state.username,
       room: "Main",
+      time: moment().format("h:mm:ss"),
     });
   };
 
