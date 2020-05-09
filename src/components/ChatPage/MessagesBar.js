@@ -19,17 +19,9 @@ export const MessagesBar = (props) => {
 
   useEffect(() => {
     if (messagesRef && messagesRef.children.length) {
-      // const firstMessage = messagesRef.children[0]; // username + text + time
-      // const firstUsername = firstMessage.children[0].children[0];
-
-      // console.log(firstUsername);
-      // if (firstUsername.innerText === "Cyberchat") {
-      //   firstUsername.style = "color:rgb(160,250,160)";
-      // }
       const lastMessage = messagesRef.children[messagesRef.children.length - 1];
 
       lastMessage.classList.toggle("animation-new-message");
-      // firstMessage.style.color = "#fff";
 
       setTimeout(() => {
         lastMessage.classList.toggle("animation-new-message");
@@ -43,9 +35,11 @@ export const MessagesBar = (props) => {
       let isCyberchat = message.username === "Cyberchat" ? true : false;
       let isCurrentUser = message.id === id ? true : false;
 
-      specialStyling = "rgb(255, 235, 255)";
+      specialStyling = "rgb(245, 225, 245)";
       if (isCyberchat) specialStyling = "rgb(160, 250, 160)";
       if (isCurrentUser) specialStyling = "rgb(5, 150, 250)";
+
+      const displayTime = !isCyberchat ? message.time : "";
 
       return (
         <li key={index} className="message">
@@ -53,7 +47,7 @@ export const MessagesBar = (props) => {
             <p className="message__username" style={{ color: specialStyling }}>
               {message.username}
             </p>
-            <p className="message__time"> {message.time}</p>
+            <p className="message__time"> {displayTime}</p>
           </section>
 
           <p className="message__text"> {message.text}</p>

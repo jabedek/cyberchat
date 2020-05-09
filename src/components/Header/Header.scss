@@ -1,9 +1,8 @@
 .header {
   margin: 0;
-  padding: 0rem 1.5rem;
+  padding: 0rem 1.75rem;
   grid-area: header;
 
-  // justify-self: start;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(1, 1fr);

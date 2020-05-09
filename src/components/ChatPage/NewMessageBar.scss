@@ -1,6 +1,6 @@
 .new-message-bar {
   height: 100%;
-  width: 22%;
+  width: 23%;
   background: transparent;
 
   display: flex;
@@ -16,6 +16,7 @@
     justify-content: center;
     border-bottom: 0.1rem solid rgba(63, 63, 86, 0.6);
     border-radius: 0.1rem;
+    border: none;
   }
 }
 
@@ -61,6 +62,7 @@
     font-size: 1.25rem;
     color: #99a;
     text-align: center;
+    user-select: none;
   }
 }
 
@@ -81,6 +83,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  user-select: none;
 
   transition: all 0.2s ease;
   background: rgba(0, 0, 0, 0.1);

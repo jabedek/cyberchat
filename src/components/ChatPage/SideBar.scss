@@ -23,6 +23,10 @@
   }
 }
 
+.my-icon {
+  user-select: none;
+}
+
 .user-info {
   display: flex;
   flex-direction: column;
@@ -67,7 +71,7 @@
 @media (max-width: 960px) {
   .sidebar {
     background: rgba(39, 39, 62, 0.9);
-    width: 19%;
+    width: 18%;
 
     font-size: 1.02rem;
     &__header {
