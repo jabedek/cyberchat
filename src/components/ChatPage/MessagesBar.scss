@@ -44,6 +44,7 @@
     height: 100%;
 
     overflow: scroll;
+    overflow-x: hidden; //horizontal
 
     border: 0.1rem solid rgba(63, 63, 86, 0.6);
     border-radius: 0.175rem;
@@ -66,6 +67,7 @@
     margin-top: 0.75rem;
     font: 400 1.2rem Raleway;
     color: rgba(255, 255, 255, 0.7);
+    word-break: break-all;
   }
 
   &__username {
@@ -75,4 +77,12 @@
   &__time {
     margin-left: 1.5rem;
   }
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
