@@ -22,6 +22,19 @@ export default class JoinPage extends React.Component {
     };
   }
 
+  componentWillUnmount() {
+    this.setState({
+      username: "",
+      classAnimate: "animation-appear",
+      btnVisibility: { display: "none" },
+      formVisibility: {
+        height: "0",
+        border: "none",
+        width: "0",
+      },
+    });
+  }
+
   componentDidMount() {
     socket.on("SERVER_WELCOME", (message) => {
       console.log("SERVER_WELCOME:\n", message);
