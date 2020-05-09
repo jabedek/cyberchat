@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./MessagesBar.scss";
+import { socket } from "../../service/socket";
 
 export const MessagesBar = (props) => {
   const [messages, setMessages] = useState([]);
   const [messagesRef, setMessagesRef] = useState(null);
+  const [id, setId] = useState(socket.id);
 
   useEffect(() => {
     if (messagesRef) {
@@ -37,8 +39,14 @@ export const MessagesBar = (props) => {
 
   const renderMessages = () => {
     const messagesList = messages.map((message, index) => {
-      const specialStyling =
-        message.username === "Cyberchat" ? "rgb(160,250,160)" : "";
+      let specialStyling = "";
+      let isCyberchat = message.username === "Cyberchat" ? true : false;
+      let isCurrentUser = message.id === id ? true : false;
+
+      specialStyling = "rgb(255, 235, 255)";
+      if (isCyberchat) specialStyling = "rgb(160, 250, 160)";
+      if (isCurrentUser) specialStyling = "rgb(5, 150, 250)";
+
       return (
         <li key={index} className="message">
           <section>

@@ -1,24 +1,24 @@
 import "./SideBar.scss";
 import React, { useState, useEffect } from "react";
+import { socket } from "../../service/socket";
 
 export const SideBar = (props) => {
   const [username, setUsername] = useState("Elo");
   const [room, setRoom] = useState("");
-  const [id, setId] = useState("");
+  const [id, setId] = useState(socket.id);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     setUsername(props.username);
     setRoom(props.room);
     setUsers(props.users);
-    setId(props.id);
-  }, [props.username, props.room, props.users, props.id]);
+  }, [props.username, props.room, props.users]);
 
   const renderUsers = () => {
     if (users) {
-      const listUsers = users.map((user, index) => (
-        <li key={index}>{user.username}</li>
-      ));
+      const listUsers = users.map((user, index) => {
+        if (user.id !== id) return <li key={index}>{user.username}</li>;
+      });
       return <ul className="sidebar__users">{listUsers}</ul>;
     }
 
@@ -39,15 +39,12 @@ export const SideBar = (props) => {
         <li className="sidebar__item">
           <i className=" eye icon"></i>
           You:
-          <p className="sidebar__value">
-            {username}
-            {id}
-          </p>
+          <p className="sidebar__value">{username}</p>
         </li>
 
         <li className="sidebar__item">
           <i className=" users icon"></i>
-          Users:
+          Other users:
           {renderUsers()}
         </li>
       </ul>

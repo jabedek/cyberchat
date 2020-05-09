@@ -15,6 +15,7 @@ export class NewMessageBar extends React.Component {
       username: this.state.username,
       text: this.state.text,
       time: moment().format("h:mm:ss"),
+      id: socket.id,
     });
     this.setState({ message: "" });
     this.setState({ text: "" });
