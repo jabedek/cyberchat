@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/cyberchat/static/css/main.e178534f.chunk.css",
-    "main.js": "/cyberchat/static/js/main.a090eebc.chunk.js",
-    "main.js.map": "/cyberchat/static/js/main.a090eebc.chunk.js.map",
+    "main.css": "/cyberchat/static/css/main.9c7b709e.chunk.css",
+    "main.js": "/cyberchat/static/js/main.4f84b471.chunk.js",
+    "main.js.map": "/cyberchat/static/js/main.4f84b471.chunk.js.map",
     "runtime-main.js": "/cyberchat/static/js/runtime-main.58f79dd0.js",
     "runtime-main.js.map": "/cyberchat/static/js/runtime-main.58f79dd0.js.map",
     "static/js/2.9e560d34.chunk.js": "/cyberchat/static/js/2.9e560d34.chunk.js",
     "static/js/2.9e560d34.chunk.js.map": "/cyberchat/static/js/2.9e560d34.chunk.js.map",
     "index.html": "/cyberchat/index.html",
-    "precache-manifest.0d9ed798fc17a8212b22c607019a3ad5.js": "/cyberchat/precache-manifest.0d9ed798fc17a8212b22c607019a3ad5.js",
+    "precache-manifest.99234b17158ba33b56712d8b63e42066.js": "/cyberchat/precache-manifest.99234b17158ba33b56712d8b63e42066.js",
     "service-worker.js": "/cyberchat/service-worker.js",
-    "static/css/main.e178534f.chunk.css.map": "/cyberchat/static/css/main.e178534f.chunk.css.map",
+    "static/css/main.9c7b709e.chunk.css.map": "/cyberchat/static/css/main.9c7b709e.chunk.css.map",
     "static/js/2.9e560d34.chunk.js.LICENSE.txt": "/cyberchat/static/js/2.9e560d34.chunk.js.LICENSE.txt",
     "static/media/panorama.png": "/cyberchat/static/media/panorama.fee7f301.png"
   },
   "entrypoints": [
     "static/js/runtime-main.58f79dd0.js",
     "static/js/2.9e560d34.chunk.js",
-    "static/css/main.e178534f.chunk.css",
-    "static/js/main.a090eebc.chunk.js"
+    "static/css/main.9c7b709e.chunk.css",
+    "static/js/main.4f84b471.chunk.js"
   ]
 }
