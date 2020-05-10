@@ -4,48 +4,45 @@ import { socket } from "../../service/socket";
 
 export const SideBar = (props) => {
   const [username, setUsername] = useState("Elo");
-  const [room, setRoom] = useState("");
-  const [id, setId] = useState(socket.id);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     setUsername(props.username);
-    setRoom(props.room);
     setUsers(props.users);
-  }, [props.username, props.room, props.users]);
+  }, [props.username, props.users]);
 
   const renderUsers = () => {
     if (users) {
       const listUsers = users.map((user, index) => {
-        if (user.id !== id)
+        if (user.id !== socket.id)
           return (
             <li className="userElement" key={index}>
               {user.username}
             </li>
           );
       });
-      return <ul className="users-info__list">{listUsers}</ul>;
+      return <ul className="users__list">{listUsers}</ul>;
     }
 
-    return <p className="users-info__list">{users.length}</p>;
+    return <p className="users__list">{users.length}</p>;
   };
 
   return (
-    <div className="sidebar">
-      <label className="sidebar__header">Status</label>
+    <div className="SideBar">
+      <label className="SideBar__header">Status</label>
 
-      <section className="user-info">
-        <div className="user-info__wrapper">
+      <section className="user">
+        <div className="user__wrapper">
           <i className="icon eye"></i>
           You:
-          <p className="user-info__name">{username}</p>
+          <p className="user__name">{username}</p>
         </div>
       </section>
 
-      <section className="users-info">
+      <section className="users">
         <span className="my-icon">
-          <i className="icon cube"></i>{" "}
-        </span>{" "}
+          <i className="icon cube"></i>
+        </span>
         Other users:
         {renderUsers()}
       </section>

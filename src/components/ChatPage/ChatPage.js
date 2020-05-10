@@ -2,13 +2,13 @@ import React from "react";
 import { Header } from "../Header/Header";
 import panorama from "../JoinPage/panorama.png";
 import { SideBar } from "./SideBar";
-import { MessagesBar } from "./MessagesBar";
-import { NewMessageBar } from "./NewMessageBar";
+import { Messages } from "./Messages";
+import { MessagingBar } from "./MessagingBar";
 import "./ChatPage.scss";
 import { Link, HashRouter } from "react-router-dom";
 import moment from "moment";
 import { Button } from "../Button/Button";
-import ifvisible from "ifvisible.js";
+// import ifvisible from "ifvisible.js";
 
 import { socket } from "../../service/socket";
 
@@ -63,15 +63,6 @@ export default class ChatPage extends React.Component {
         }
       }
     });
-
-    // if (this._isMounted) {
-    //   ifvisible.setIdleDuration(120);
-    //   ifvisible.on("idle", () => {
-    //     // socket.emit("disconnect");
-    //     socket.disconnect();
-    //     this.setState({ connected: false });
-    //   });
-    // }
   }
 
   componentWillUnmount() {
@@ -106,8 +97,8 @@ export default class ChatPage extends React.Component {
               room={this.state.room}
               users={this.state.users}
             />
-            <MessagesBar messages={this.state.messages} />
-            <NewMessageBar username={this.state.username} />
+            <Messages messages={this.state.messages} />
+            <MessagingBar username={this.state.username} />
           </div>
         ) : (
           <HashRouter basename="/">

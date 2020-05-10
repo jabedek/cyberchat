@@ -1,10 +1,10 @@
 import React from "react";
 import { Button } from "../Button/Button";
-import "./NewMessageBar.scss";
+import "./MessagingBar.scss";
 import moment from "moment";
 import { socket } from "../../service/socket";
 
-export class NewMessageBar extends React.Component {
+export class MessagingBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { text: "", username: props.username, time: null };
@@ -23,14 +23,8 @@ export class NewMessageBar extends React.Component {
 
   render() {
     return (
-      <div className="new-message-bar">
-        <label className="new-message-bar__header">
-          <section className="new-message-bar-user-info">
-            {this.state.username}
-          </section>
-        </label>
-
-        <form className="message__form" id="message__form">
+      <div className="MessagingBar">
+        <form className="MessagingBar__form" id="message__form">
           <textarea
             id="msg"
             type="text"
@@ -39,7 +33,7 @@ export class NewMessageBar extends React.Component {
             name="message"
             autoComplete="off"
             spellCheck="false"
-            className="message__input "
+            className="MessagingBar__input "
             onChange={(event) => {
               this.setState({ text: event.target.value });
             }}
@@ -59,7 +53,7 @@ export class NewMessageBar extends React.Component {
               }
             }}
             text={">"}
-            classes={"send-button"}
+            classes={"MessagingBar__button"}
           />
         </form>
       </div>

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./MessagesBar.scss";
+import "./Messages.scss";
 import { socket } from "../../service/socket";
 
-export const MessagesBar = (props) => {
+export const Messages = (props) => {
   const [messages, setMessages] = useState([]);
   const [messagesRef, setMessagesRef] = useState(null);
-  const [id, setId] = useState(socket.id);
 
   useEffect(() => {
     if (messagesRef) {
@@ -30,21 +29,32 @@ export const MessagesBar = (props) => {
   }, [messages]);
 
   const renderMessages = () => {
-    const messagesList = messages.map((message, index) => {
-      let specialStyling = "";
-      let isCyberchat = message.username === "Cyberchat" ? true : false;
-      let isCurrentUser = message.id === id ? true : false;
+    /* Set styling for displaying messages depending on their source 
+      - other users are white-ish
+      - cyberchat is green-ish
+      - current user is blue-ish
+      ALSO don't display hours because messages from server (Cyberchat) deployed on Heroku will show different local time
+    */
 
-      specialStyling = "rgb(245, 225, 245)";
-      if (isCyberchat) specialStyling = "rgb(160, 250, 160)";
-      if (isCurrentUser) specialStyling = "rgb(5, 150, 250)";
+    const messagesList = messages.map((message, index) => {
+      let isCyberchat = message.username === "Cyberchat" ? true : false;
+      let isCurrentUser = message.id === socket.id ? true : false;
+
+      let specialColor = "rgb(245, 225, 245)";
+      if (isCyberchat) specialColor = "rgb(160, 250, 160)";
+      if (isCurrentUser) specialColor = "rgb(5, 150, 250)";
 
       const displayTime = !isCyberchat ? message.time : "";
 
       return (
         <li key={index} className="message">
           <section>
-            <p className="message__username" style={{ color: specialStyling }}>
+            <p
+              className="message__username"
+              style={{
+                color: specialColor,
+              }}
+            >
               {message.username}
             </p>
             <p className="message__time"> {displayTime}</p>
@@ -59,13 +69,12 @@ export const MessagesBar = (props) => {
   };
 
   return (
-    <div className="messages-bar">
-      {/* <label className="messages-bar__header">Messages</label> */}
-      <div className="messages-bar__list-wrapper">
+    <div className="Messages">
+      <div className="Messages__list-container">
         <ul
-          className="messages-bar__list"
+          className="Messages__list"
           ref={(el) => {
-            setMessagesRef(el);
+            setMessagesRef(el); // Ref used for scrolling to last message
           }}
         >
           {messages && renderMessages()}
