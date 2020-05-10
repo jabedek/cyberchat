@@ -64,3 +64,16 @@
 .my-icon {
   user-select: none;
 }
+
+@media (max-width: 960px) {
+  .SideBar {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  // .SideBar {
+  //   // width: calc(26% + 17%)
+  //   width: 100%;
+  // }
+}
