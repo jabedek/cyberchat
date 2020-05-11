@@ -8,6 +8,7 @@
   flex-direction: column;
   font: 400 1.1rem "Open Sans", sans-serif;
   color: #ddd;
+  height: 100%;
 
   &__header {
     display: flex;
@@ -87,22 +88,4 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 960px) {
-}
-
-@media (max-width: 560px) {
-  .Messages {
-    // width: calc(26% + 17%)
-    width: 100%;
-    height: 60%;
-  }
-
-  .message {
-    font-size: 0.8rem;
-    &__text {
-      font-size: 1rem;
-    }
-  }
 }

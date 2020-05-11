@@ -90,8 +90,13 @@ export default class ChatPage extends React.Component {
           />
         </div>
         <Header />
+
         {this.state.connected ? (
           <div className="chat__board">
+            {/* <Button
+              text={"Users"}
+              classes={"users-list-button animation-delayed-appear"}
+            /> */}
             <SideBar
               username={this.state.username}
               room={this.state.room}
