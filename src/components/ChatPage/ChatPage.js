@@ -28,6 +28,7 @@ export default class ChatPage extends React.Component {
     this._isMounted = true;
 
     socket.on("SERVER_MESSAGE", (message) => {
+      console.log(message);
       if (this._isMounted) {
         if (this.state.messages) {
           let newMessages = [...this.state.messages, message];
@@ -46,6 +47,8 @@ export default class ChatPage extends React.Component {
     });
 
     socket.on("SERVER_REGISTER", (message) => {
+      console.log(message);
+
       if (this._isMounted) {
         this.setState({
           username: message.username,
@@ -107,6 +110,7 @@ export default class ChatPage extends React.Component {
           </div>
         ) : (
           <HashRouter basename="/">
+            <p class="joining-message">Joining...</p>
             <Link to="/">
               <Button
                 text={"Back"}

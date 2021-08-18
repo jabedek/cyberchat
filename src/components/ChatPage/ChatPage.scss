@@ -19,6 +19,17 @@
   background: rgba(15, 15, 40, 1);
 }
 
+.joining-message {
+  position: absolute;
+  z-index: 10 !important;
+  font: 500 2.65rem "Jost";
+  top: 30%;
+  color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
 .home-button {
   display: flex;
   justify-content: center;
